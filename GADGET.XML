@@ -1,0 +1,34 @@
+<!--//
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Created by Johan Bourtembour (JB)
+//  http://com3.runboard.com/bsfkillaplace
+//  Copyright (c) 2006-2007 SFkilla.  All rights reserved.
+//  DO NOT MODIFY OR CHANGE ANYTHING IN HERE!
+//  I Thank you in advance for respecting my work ;)
+//
+////////////////////////////////////////////////////////////////////////////////
+//-->
+<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+    <name>23段数码管时钟</name>
+    <namespace>Clock23</namespace>
+    <version>1.0</version>
+	<author name="葛炳仑">
+		<logo src="39.png" />
+	</author>
+	<copyright>©2020</copyright>
+    <description>辉光管风格</description>
+
+    <icons>
+      <icon height="48" width="48" src="icon.png"/>
+    </icons>    
+
+    <hosts>
+        <host name="sidebar">
+            <base type="HTML" apiVersion="1.0.0" src="CLOCK.HTM" />
+            <permissions>full</permissions>
+            <platform minPlatformVersion="0.3" />
+        </host>
+    </hosts>
+</gadget>

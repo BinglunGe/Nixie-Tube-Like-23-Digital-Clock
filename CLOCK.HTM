@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Clock</title>
+    <style type="text/css">
+	<!--
+        body,#blk{
+            width: 420px;
+            height: 128px;
+            background-color: black;
+			margin: 0px;
+        }
+		.blk{
+			position: absolute;
+			left:0px;
+			top:0px;
+			z-index:-1;
+		}
+        .led{
+            float: left;
+            width: 64px;
+        }
+        .ledS{
+            float:left;
+            width:12px;
+        }
+	-->
+    </style>
+</head>
+<body onload="flashLed()">
+	<div class="test"></div>
+	<div class="blk">
+		<img src="BLACK.BMP" id="blk">
+	</div>
+	<div class="led">
+		<img id="i0" src="0.GIF">
+	</div>
+	<div class="led">
+		<img id="i1" src="0.GIF">
+	</div>
+	<div class="ledS">
+		<img src="S.GIF">
+	</div>
+	<div class="led">
+		<img id="i2" src="0.GIF">
+	</div>
+	<div class="led">
+		<img id="i3" src="0.GIF">
+	</div>
+	<div class="ledS">
+		<img src="S.GIF">
+	</div>
+	<div class="led">
+		<img id="i4" src="0.GIF">
+	</div>
+	<div class="led">
+		<img id="i5" src="0.GIF">
+	</div>
+	<script src="J.JS" type="text/javascript"></script>
+    <script language="JavaScript">
+        function prefixZero(num, n) {
+            return (Array(n).join(0) + num).slice(-n);
+        }
+        function changeLed(str) {
+			//$(".test").html(str);
+            for(var i=0;i<str.length;i++){
+                $("#i"+i).attr("src",str.charAt(i)+".GIF");
+            }
+        }
+        function flashLed(){
+            var d=new Date();
+            changeLed(
+                prefixZero(d.getHours(),2)+
+                prefixZero(d.getMinutes(),2)+
+                prefixZero(d.getSeconds(),2));
+        }
+		try{
+			setInterval("flashLed()",200);
+		}catch(e){
+			alert(e);
+		}
+    </script>
+</body>
+</html>
